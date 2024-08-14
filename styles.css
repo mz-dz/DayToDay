@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #FF3B30;
+    --secondary-color: #007AFF;
+    --background-color: #F2F2F7;
+    --text-color: #000000;
+    --card-background: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body, html {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background-color: var(--card-background);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #E5E5EA;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 59, 48, 0.1);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #FF6B6B;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#entries {
+    margin-top: 30px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.entry {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.entry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.entry-date {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#emoji-picker {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.emoji {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}
+
+#search-container {
+    margin-top: 20px;
+}
+
+.entry-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.entry-actions button {
+    width: auto;
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+#settings-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.error {
+    background-color: #f44336;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #FF453A;
+        --secondary-color: #0A84FF;
+        --background-color: #1C1C1E;
+        --text-color: #FFFFFF;
+        --card-background: #2C2C2E;
+        --shadow-color: rgba(255, 255, 255, 0.1);
+    }
+}

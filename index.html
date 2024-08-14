@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مذكراتي اليومية 📖</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#281616" />
+    <meta name="msapplication-TileColor" content="#281616" />
+    <meta name="theme-color" content="#ecdada" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    <div class="container">
+      <h1 class="fade-in">📖 مذكراتي اليومية</h1>
+      <div id="auth-form" class="fade-in">
+        <h2 id="auth-title">تسجيل الدخول</h2>
+        <input type="text" id="username" placeholder="اسم المستخدم" />
+        <input type="password" id="pin" placeholder="الرمز السري (PIN) 🔐" />
+        <button onclick="authenticate()">دخول 🚀</button>
+        <button onclick="toggleAuthMode()">إنشاء حساب جديد</button>
+      </div>
+      <div id="diary-form" style="display: none">
+        <textarea
+          id="diary-entry"
+          rows="5"
+          placeholder="اكتب يومياتك هنا... ✍️"
+        ></textarea>
+        <div id="emoji-picker">
+          <span class="emoji" onclick="addEmoji('😊')">😊</span>
+          <span class="emoji" onclick="addEmoji('❤️')">❤️</span>
+          <span class="emoji" onclick="addEmoji('🎉')">🎉</span>
+          <span class="emoji" onclick="addEmoji('🌟')">🌟</span>
+          <span class="emoji" onclick="addEmoji('🤔')">🤔</span>
+        </div>
+        <button id="save-button" onclick="saveEntry()">حفظ اليومية 💾</button>
+        <div id="search-container">
+          <input type="date" id="search-date" />
+          <button onclick="searchEntries()">بحث 🔎</button>
+        </div>
+        <div id="entries"></div>
+        <button onclick="showSettings()">إعدادات الحساب ⚙️</button>
+        <button onclick="logout()">تسجيل الخروج</button>
+      </div>
+      <div id="settings-form">
+        <h2>إعدادات الحساب</h2>
+        <input
+          type="text"
+          id="new-username"
+          placeholder="اسم المستخدم الجديد"
+        />
+        <input
+          type="password"
+          id="new-pin"
+          placeholder="الرمز السري الجديد (PIN)"
+        />
+        <button onclick="updateAccount()">تحديث الحساب</button>
+        <button onclick="hideSettings()">إلغاء</button>
+      </div>
+    </div>
+  </body>
+</html>
